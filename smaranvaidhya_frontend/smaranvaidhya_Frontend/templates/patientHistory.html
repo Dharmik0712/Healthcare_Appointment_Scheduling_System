@@ -1,0 +1,40 @@
+{% extends 'Header.html' %}
+{% include 'includes/applicationHeaderPage.html' %}
+
+{% block content %}
+<h1>Welcome, {{ session['email'] }}</h1>
+<div class="main-content">
+    <div id="historySection">
+        <h2>Patient History</h2>
+        <table id="appointmentsTable" border="1">
+            <thead>
+                <tr>
+                    <th>Appointment ID</th>
+                    <th>Doctor ID</th>
+                    <th>Patient Name</th>
+                    <th>Gender</th>
+                    <th>Age</th>
+                    <th>Date of Appointment</th>
+                    <th>Slot of Appointment</th>
+                    <th>Mode of Payment</th>
+                    <th>Contact Number</th>
+                    <th>Reason for Visit</th>
+                    <th>Pre-existing Conditions</th>
+                    <th>Current Medications</th>
+                    <th>Allergies</th>
+                </tr>
+            </thead>
+            <tbody id="appointmentsTableBody">
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        register_login_events();
+        get_user_history();
+    });
+</script>
+{% endblock %}

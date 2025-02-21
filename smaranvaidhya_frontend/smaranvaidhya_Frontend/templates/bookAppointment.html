@@ -1,0 +1,13 @@
+{% extends 'Header.html' %}
+{% include 'includes/applicationHeaderPage.html' %}
+
+{% block content %}
+<div id="maincomponent" style="margin-top:30px;"></div>
+<script>
+    $(document).ready(function () {
+        register_login_events();
+        get_doctor_data();
+        populate_doctor_data(doctor_data);
+    });
+</script>
+{% endblock %}

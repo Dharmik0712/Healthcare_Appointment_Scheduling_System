@@ -1,0 +1,33 @@
+{% extends 'Header.html' %}
+{% include 'includes/applicationHeaderPage.html' %}
+
+{% block content %}
+<h1>Welcome, {{ session['user_id'] }}</h1>
+<table id="appointmentsTable" border="1">
+    <thead>
+        <tr>
+            <th>Appointment ID</th>
+            <th>Patient ID</th>
+            <th>Patient Name</th>
+            <th>Gender</th>
+            <th>Age</th>
+            <th>Date of Appointment</th>
+            <th>Slot of Appointment</th>
+            <th>Mode of Payment</th>
+            <th>Contact Number</th>
+            <th>Reason for Visit</th>
+            <th>Pre-existing Conditions</th>
+            <th>Current Medications</th>
+            <th>Allergies</th>
+        </tr>
+    </thead>
+    <tbody id="appointmentsTableBody">
+    </tbody>
+</table>
+<script>
+    $(document).ready(function () {
+        register_login_events();
+        get_doctor_view_data();
+    });
+</script>
+{% endblock %}
